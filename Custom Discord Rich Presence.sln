@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Custom Discord Rich Presence", "Custom Discord Rich Presence\Custom Discord Rich Presence.njsproj", "{89C7F787-3611-43FC-ABC7-FBC6CE2024EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89C7F787-3611-43FC-ABC7-FBC6CE2024EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C7F787-3611-43FC-ABC7-FBC6CE2024EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C7F787-3611-43FC-ABC7-FBC6CE2024EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C7F787-3611-43FC-ABC7-FBC6CE2024EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {776D98A0-4978-474D-A313-0DDC78DDB115}
+	EndGlobalSection
+EndGlobal

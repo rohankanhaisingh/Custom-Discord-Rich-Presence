@@ -1,0 +1,123 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>Custom Discord Rich Presence</Name>
+    <RootNamespace>Custom Discord Rich Presence</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>89c7f787-3611-43fc-abc7-fbc6ce2024ec</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <StartWebBrowser>false</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="app.js" />
+    <Content Include="backend\appdata.js" />
+    <Content Include="backend\handleIO.js" />
+    <Content Include="documentation\how to create an application.md" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="view\css\main.css" />
+    <Content Include="view\css\static\static.essentials.css" />
+    <Content Include="view\css\static\static.titlebar.css" />
+    <Content Include="view\data\fonts\atures.ttf" />
+    <Content Include="view\data\fonts\black.ttf" />
+    <Content Include="view\data\fonts\Chopsic-K6Dp.ttf" />
+    <Content Include="view\data\fonts\EuclidCircularB-Regular.otf" />
+    <Content Include="view\data\fonts\fools.otf" />
+    <Content Include="view\data\fonts\fools_errand.otf" />
+    <Content Include="view\data\fonts\geforce_bold-webfont.woff" />
+    <Content Include="view\data\fonts\HallowenInline.otf" />
+    <Content Include="view\data\fonts\HallowenInline.ttf" />
+    <Content Include="view\data\fonts\HallowenInlineFree.png" />
+    <Content Include="view\data\fonts\High Tide Bold.otf" />
+    <Content Include="view\data\fonts\HighTide.otf" />
+    <Content Include="view\data\fonts\HighTideSans.otf" />
+    <Content Include="view\data\fonts\index.css" />
+    <Content Include="view\data\fonts\MonospaceBold-zmP0.ttf" />
+    <Content Include="view\data\fonts\MonospaceOblique-5meB.ttf" />
+    <Content Include="view\data\fonts\MonospaceRegular-6ZWg.ttf" />
+    <Content Include="view\data\fonts\Montserrat.woff2" />
+    <Content Include="view\data\fonts\Notes.txt" />
+    <Content Include="view\data\fonts\OpenSans.woff2" />
+    <Content Include="view\data\fonts\outline-two.otf" />
+    <Content Include="view\data\fonts\poiret-one.ttf" />
+    <Content Include="view\data\fonts\PoiretOne.ttf" />
+    <Content Include="view\data\fonts\Roboto-Black.ttf" />
+    <Content Include="view\data\fonts\Roboto-BlackItalic.ttf" />
+    <Content Include="view\data\fonts\Roboto-Bold.ttf" />
+    <Content Include="view\data\fonts\Roboto-BoldItalic.ttf" />
+    <Content Include="view\data\fonts\Roboto-Italic.ttf" />
+    <Content Include="view\data\fonts\Roboto-Light.ttf" />
+    <Content Include="view\data\fonts\Roboto-LightItalic.ttf" />
+    <Content Include="view\data\fonts\Roboto-Medium.ttf" />
+    <Content Include="view\data\fonts\Roboto-MediumItalic.ttf" />
+    <Content Include="view\data\fonts\Roboto-Regular.ttf" />
+    <Content Include="view\data\fonts\Roboto-Thin.ttf" />
+    <Content Include="view\data\fonts\Roboto-ThinItalic.ttf" />
+    <Content Include="view\data\fonts\RobotoCondensed-Bold.ttf" />
+    <Content Include="view\data\fonts\RobotoCondensed-BoldItalic.ttf" />
+    <Content Include="view\data\fonts\RobotoCondensed-Italic.ttf" />
+    <Content Include="view\data\fonts\RobotoCondensed-Light.ttf" />
+    <Content Include="view\data\fonts\RobotoCondensed-LightItalic.ttf" />
+    <Content Include="view\data\fonts\RobotoCondensed-Regular.ttf" />
+    <Content Include="view\data\fonts\RobotoMono-Bold.ttf" />
+    <Content Include="view\data\fonts\RobotoMono-BoldItalic.ttf" />
+    <Content Include="view\data\fonts\RobotoMono-Italic.ttf" />
+    <Content Include="view\data\fonts\RobotoMono-Light.ttf" />
+    <Content Include="view\data\fonts\RobotoMono-LightItalic.ttf" />
+    <Content Include="view\data\fonts\RobotoMono-Medium.ttf" />
+    <Content Include="view\data\fonts\RobotoMono-MediumItalic.ttf" />
+    <Content Include="view\data\fonts\RobotoMono-Regular.ttf" />
+    <Content Include="view\data\fonts\RobotoMono-Thin.ttf" />
+    <Content Include="view\data\fonts\RobotoMono-ThinItalic.ttf" />
+    <Content Include="view\data\fonts\Rockout.ttf" />
+    <Content Include="view\data\fonts\ScaryHalloween.ttf" />
+    <Content Include="view\data\fonts\scary_halloween.zip" />
+    <Content Include="view\data\fonts\VeganAbattoir.otf" />
+    <Content Include="view\data\fonts\WhitneyMedium.woff" />
+    <Content Include="view\data\images\beans.jpg" />
+    <Content Include="view\data\images\discord.png" />
+    <Content Include="view\data\images\user.png" />
+    <Content Include="view\data\images\wallpaper_abstract.jpg" />
+    <Content Include="view\index.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="view\js\essentials.js" />
+    <Content Include="view\js\handleInputfields.js" />
+    <Content Include="view\js\iohandler.js" />
+    <Content Include="view\js\main.js" />
+    <Content Include="view\login.html">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="backend\" />
+    <Folder Include="documentation\" />
+    <Folder Include="view\" />
+    <Folder Include="view\css\static\" />
+    <Folder Include="view\data\fonts\" />
+    <Folder Include="view\data\images\" />
+    <Folder Include="view\js\" />
+    <Folder Include="view\css\" />
+    <Folder Include="view\data\" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+</Project>

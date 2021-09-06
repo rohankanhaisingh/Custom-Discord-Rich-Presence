@@ -1,0 +1,103 @@
+.app-titlebar {
+    width: 100%;
+    height: 30px;
+    background: #0e0e0e;
+    position: relative;
+    content: "";
+}
+
+.titlebar-draggable {
+    width: calc(100% - 140px);
+    height: 100%;
+    float: left;
+    -webkit-app-region: drag !important;
+}
+
+.app-titlebar-title {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+    .app-titlebar-title span {
+        font-family: Montserrat;
+        color: #fff;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+.app-titlebar-controls {
+    width: 140px;
+    height: 100%;
+    /*background: red;*/
+    float: right;
+}
+
+.app-titlebar-controls-control {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    content: '';
+    float: right;
+    /*background: blue;*/
+    padding: 5px;
+    /*border-radius: 50%;*/
+    cursor: pointer;
+}
+
+    .app-titlebar-controls-control:before, .app-titlebar-controls-control:after {
+        position: absolute;
+        content: '';
+    }
+
+
+    .app-titlebar-controls-control.control-close:before, .app-titlebar-controls-control.control-close:after {
+        width: 50%;
+        height: 1px;
+        inset: 0;
+        margin: auto;
+        background: #fff;
+    }
+
+    .app-titlebar-controls-control.control-close:before {
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .app-titlebar-controls-control.control-close:after {
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    .app-titlebar-controls-control.control-maximize:before {
+        width: 30%;
+        height: 30%;
+        inset: 0;
+        margin: auto;
+        border: 1px solid #fff;
+        /*top: -1px;*/
+    }
+
+    .app-titlebar-controls-control.control-minimize:before {
+        width: 30%;
+        height: 1px;
+        inset: 0;
+        margin: auto;
+        background: #fff;
+    }
+
+.app-titlebar-controls-control:hover {
+    background: #2e2e2e;
+}
+
+.app-titlebar-controls-control.control-close:hover {
+    background: #ff6a6a;
+}
