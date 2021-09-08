@@ -47,6 +47,6 @@ You can of course upload more images with different keys.
 ## Getting ready to use the RPC application
 Nice! You have succesfully setup your Discord application, now its ready to be used in the RPC application.
 
-Now, go the tab 'General information'. And copy your application ID.
+Now, go the tab 'General information'. And copy your application ID. You will use your application ID for the RPC application.
 
 ![06](https://cdn.discordapp.com/attachments/857190128405184512/884482921996644383/unknown.png)

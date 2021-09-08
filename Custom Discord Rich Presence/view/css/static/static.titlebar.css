@@ -14,7 +14,7 @@
 }
 
 .app-titlebar-title {
-    width: 100%;
+    width: auto;
     height: auto;
     float: left;
     margin-top: 5px;
@@ -28,12 +28,29 @@
         text-transform: uppercase;
     }
 
-.app-titlebar-controls {
-    width: 140px;
-    height: 100%;
-    /*background: red;*/
-    float: right;
+.app-titlebar-hint {
+    width: auto;
+    height: 10px;
+    float: left;
+    padding: 5px 12px 15px 10px;
+    margin-left: 20px;
+    pointer-events: all;
+    cursor: pointer;
+    -webkit-app-region: none !important;
+    background: #252525;
 }
+    .app-titlebar-hint span {
+        font-family: Montserrat;
+        color: #fff;
+        font-size: 12px;
+    }
+
+    .app-titlebar-controls {
+        width: 140px;
+        height: 100%;
+        /*background: red;*/
+        float: right;
+    }
 
 .app-titlebar-controls-control {
     width: 20px;

@@ -1,3 +1,27 @@
+const electron = require("electron");
+
+const { ipcRenderer } = electron;
+
+// ================= Handlers =================
+
+const titlebarControlButtons = document.querySelectorAll(".app-titlebar-controls-control");
+
+titlebarControlButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        if (button.classList.contains("control-close")) ipcRenderer.send("app:close", null);
+
+        if (button.classList.contains("control-maximize")) ipcRenderer.send("app:toggle_windowsize", null);
+
+        if (button.classList.contains("control-minimize")) ipcRenderer.send("app:minimize", null);
+
+    });
+});
+
+
+// ================= Public functions =================
+
 /**
  * Pauses the code execution for a specific amount of time asynchronously.
  * @param {number} milliseconds
@@ -8,7 +32,9 @@ export function waitFor(milliseconds) {
     return new Promise(function (resolve, reject) {
 
         if (typeof milliseconds == "number") {
-            setTimeout(milliseconds, resolve);
+            setTimeout(milliseconds, function () {
+                resolve();
+            });
 
             return;
         }

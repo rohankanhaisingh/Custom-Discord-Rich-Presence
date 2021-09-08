@@ -30,12 +30,16 @@
   <ItemGroup>
     <Content Include="app.js" />
     <Content Include="backend\appdata.js" />
+    <Content Include="backend\discord.js" />
     <Content Include="backend\handleIO.js" />
     <Content Include="documentation\how to create an application.md" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="view\css\login.css" />
     <Content Include="view\css\main.css" />
+    <Content Include="view\css\static\static.apploader.css" />
     <Content Include="view\css\static\static.essentials.css" />
+    <Content Include="view\css\static\static.loader.css" />
     <Content Include="view\css\static\static.titlebar.css" />
     <Content Include="view\data\fonts\atures.ttf" />
     <Content Include="view\data\fonts\black.ttf" />
@@ -93,6 +97,25 @@
     <Content Include="view\data\fonts\scary_halloween.zip" />
     <Content Include="view\data\fonts\VeganAbattoir.otf" />
     <Content Include="view\data\fonts\WhitneyMedium.woff" />
+    <Content Include="view\data\icons\bruh.jpeg" />
+    <Content Include="view\data\icons\favicon.png" />
+    <Content Include="view\data\icons\icon_arrowleft.png" />
+    <Content Include="view\data\icons\icon_arrowright.png" />
+    <Content Include="view\data\icons\icon_battery.png" />
+    <Content Include="view\data\icons\icon_bin.webp" />
+    <Content Include="view\data\icons\icon_commandline.png" />
+    <Content Include="view\data\icons\icon_commandline_white.png" />
+    <Content Include="view\data\icons\icon_dashboard.png" />
+    <Content Include="view\data\icons\icon_edit.png" />
+    <Content Include="view\data\icons\icon_global.png" />
+    <Content Include="view\data\icons\icon_joystick.png" />
+    <Content Include="view\data\icons\icon_linkopen.jpg" />
+    <Content Include="view\data\icons\icon_linkopen.png" />
+    <Content Include="view\data\icons\icon_logout.png" />
+    <Content Include="view\data\icons\icon_ping.png" />
+    <Content Include="view\data\icons\icon_play.png" />
+    <Content Include="view\data\icons\icon_search.webp" />
+    <Content Include="view\data\icons\icon_temprature.png" />
     <Content Include="view\data\images\beans.jpg" />
     <Content Include="view\data\images\discord.png" />
     <Content Include="view\data\images\user.png" />
@@ -103,7 +126,9 @@
     <Content Include="view\js\essentials.js" />
     <Content Include="view\js\handleInputfields.js" />
     <Content Include="view\js\iohandler.js" />
+    <Content Include="view\js\login.js" />
     <Content Include="view\js\main.js" />
+    <Content Include="view\loader.html" />
     <Content Include="view\login.html">
       <SubType>Code</SubType>
     </Content>
@@ -115,6 +140,7 @@
     <Folder Include="view\css\static\" />
     <Folder Include="view\data\fonts\" />
     <Folder Include="view\data\images\" />
+    <Folder Include="view\data\icons\" />
     <Folder Include="view\js\" />
     <Folder Include="view\css\" />
     <Folder Include="view\data\" />

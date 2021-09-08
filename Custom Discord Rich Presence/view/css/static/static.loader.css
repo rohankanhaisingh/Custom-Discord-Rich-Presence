@@ -1,0 +1,49 @@
+.app-loader {
+    width: 100vw;
+    height: calc(100vh - 30px);
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 9999;
+    background: #0e0e0e;
+}
+
+    .app-loader.fadeout {
+        opacity: 0;
+        -moz-animation: app-loader-fadeout 0.3s ease;
+        -o-animation: app-loader-fadeout 0.3s ease;
+        -webkit-animation: app-loader-fadeout 0.3s ease;
+        animation: app-loader-fadeout 0.3s ease;
+    }
+
+    .app-loader.fadein {
+        opacity: 1;
+        -moz-animation: app-loader-fadein 0.3s ease;
+        -o-animation: app-loader-fadein 0.3s ease;
+        -webkit-animation: app-loader-fadein 0.3s ease;
+        animation: app-loader-fadein 0.3s ease;
+    }
+
+@keyframes app-loader-fadeout {
+    0% {
+    opacity: 1;
+    }
+    100% { 
+        opacity: 0;
+    }
+}
+
+@keyframes app-loader-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.app-loader.hidden {
+    display: none;
+}

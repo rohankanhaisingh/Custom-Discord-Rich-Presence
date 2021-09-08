@@ -1,26 +1,81 @@
 import "./essentials.js";
 import { handle } from "./handleInputfields.js";
-import { emitData } from "./iohandler.js";
+import { emitData, listen } from "./iohandler.js";
 
 const inputFields = document.querySelectorAll(".visualizer-inputfield"),
-    buttons = document.querySelectorAll(".visualizer-button");
+    buttons = document.querySelectorAll(".visualizer-button"),
+    loader = document.querySelector(".app-loader");
 
-buttons.forEach(function (button) {
+window.addEventListener("load", function () {
 
-    const buttonID = button.getAttribute("data-id");
+    // Requesting data from the server.
+    emitData("discord:getClientData");
+    emitData("app:getPresenceData");
 
-    button.addEventListener("click", function () {
+    listen("discord.response:getClientData", function (data) {
 
-        switch (buttonID) {
-            case "discord-rpc-update":
+        const profileNameNode = document.querySelector(".discord-visualizer-profile-name"),
+            profilePictureNode = document.querySelector(".discord-visualizer-profile-picture img");
 
-                const obj = handle(inputFields);
 
-                emitData("app:update_presence", obj);
+        profilePictureNode.src = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.gif`;
 
-                break;
+        profileNameNode.innerHTML = `<span>${data.username}#<b>${data.discriminator}</b></span>`;
+
+        loader.classList.add("fadeout");
+
+        setTimeout(function () {
+
+            loader.classList.add("hidden");
+
+            loader.classList.remove("fadeout");
+
+        }, 300);
+    });
+
+    listen("app.response:getPresenceData", function (data) {
+
+        console.log(data);
+
+        const presenceData = data.presence;
+
+        for (let key in presenceData) {
+
+            inputFields.forEach(function (field) {
+
+                const fieldAttr = field.getAttribute("data-bind");
+
+                if (fieldAttr == key) {
+                    field.innerHTML = presenceData[key];
+                }
+
+            });
+
         }
 
     });
+
+
+
+    buttons.forEach(function (button) {
+
+        const buttonID = button.getAttribute("data-id");
+
+        button.addEventListener("click", function () {
+
+            switch (buttonID) {
+                case "discord-rpc-update":
+
+                    const obj = handle(inputFields);
+
+                    emitData("app:update_presence", obj);
+
+                    break;
+            }
+
+        });
+
+    });
+
 
 });

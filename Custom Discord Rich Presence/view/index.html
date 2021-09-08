@@ -30,17 +30,25 @@
 
     <title>Discord Custom RPC</title>
 
-    <link href="css/static/static.essentials.css" rel="stylesheet" type="text/css"/>
+    <link href="css/static/static.essentials.css" rel="stylesheet" type="text/css" />
     <link href="css/static/static.titlebar.css" rel="stylesheet" type="text/css" />
+    <link href="css/static/static.loader.css" rel="stylesheet" type="text/css" />
 
     <link href="css/main.css" type="text/css" rel="stylesheet" />
 
+    <link href="data/fonts/index.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
     <div class="app electron-application custom-discord-application main-application --foreground">
         <div class="container">
             <!-- Application contents -->
+
+            <div class="app-loader">
+                <div class="container">
+
+                </div>
+            </div>
 
             <div class="app-titlebar">
                 <div class="container">
@@ -75,7 +83,7 @@
                             </div>
 
                             <div class="discord-visualizer-profile-name">
-                                <span contenteditable="true" spellcheck="false" autocomplete="false">Your username<b contenteditable="true" spellcheck="false" autocomplete="false">#1234</b></span>
+                                <span>Your username<b>#1234</b></span>
                             </div>
 
                         </div>
@@ -128,20 +136,20 @@
 
                     <div class="discord-visualizer-interact">
 
-                        <div class="visualizer-inputfield" data-type="string" data-id="inputfield-details" data-title="Details" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="string" data-id="inputfield-state" data-title="State" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="string" data-id="inputfield-large_image_key" data-title="Large-image key" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="string" data-id="inputfield-small_image_key" data-title="Small-image key" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="string" data-id="inputfield-large_image_text" data-title="Large-image text" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="string" data-id="inputfield-small_image_text" data-title="Small-image text" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="number" data-id="inputfield-start_timestamp" data-title="Start timestamp" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="number" data-id="inputfield-end_timestamp" data-title="End timestamp" contenteditable="true" spellcheck="false"></div>
+                        <div class="visualizer-inputfield" data-type="string" data-bind="details" data-id="inputfield-details" data-title="Details " contenteditable="true" spellcheck="false"></div>
+                        <div class="visualizer-inputfield" data-type="string" data-bind="state" data-id="inputfield-state" data-title="State " contenteditable="true" spellcheck="false"></div>
+                        <div class="visualizer-inputfield" data-type="string" data-bind="startTimestamp" data-id="inputfield-large_image_key" data-title="Large-image key  " contenteditable="true" spellcheck="false"></div>
+                        <div class="visualizer-inputfield" data-type="string" data-bind="endTimestamp" data-id="inputfield-small_image_key" data-title="Small-image key  " contenteditable="true" spellcheck="false"></div>
+                        <div class="visualizer-inputfield" data-type="string" data-bind="largeImageKey" data-id="inputfield-large_image_text" data-title="Large-image text  " contenteditable="true" spellcheck="false"></div>
+                        <div class="visualizer-inputfield" data-type="string" data-bind="smallImageKey" data-id="inputfield-small_image_text" data-title="Small-image text " contenteditable="true" spellcheck="false"></div>
+                        <div class="visualizer-inputfield" data-type="number" data-bind="largeImageText" data-id="inputfield-start_timestamp" data-title="Start timestamp | number " contenteditable="true" spellcheck="false"></div>
+                        <div class="visualizer-inputfield" data-type="number" data-bind="smallImageText" data-id="inputfield-end_timestamp" data-title="End timestamp | number " contenteditable="true" spellcheck="false"></div>
 
                         <div class="visualizer-button" data-id="discord-rpc-update">
                             <span>Update</span>
                         </div>
                         <div class="visualizer-button">
-                            <span>close</span>
+                            <span>logout</span>
                         </div>
 
                     </div>

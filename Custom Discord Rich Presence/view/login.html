@@ -32,8 +32,11 @@
 
     <link href="css/static/static.essentials.css" rel="stylesheet" type="text/css" />
     <link href="css/static/static.titlebar.css" rel="stylesheet" type="text/css" />
+    <link href="css/static/static.loader.css" rel="stylesheet" type="text/css" />
 
     <link href="data/fonts/index.css" rel="stylesheet" type="text/css" />
+
+    <link href="css/login.css" type="text/css" rel="stylesheet" />
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -45,6 +48,12 @@
     <div class="app electron-application custom-discord-application main-application --foreground">
         <div class="container">
 
+            <div class="app-loader fadein hidden">
+                <div class="container">
+
+                </div>
+            </div>
+
             <div class="app-titlebar">
                 <div class="container">
 
@@ -52,6 +61,10 @@
 
                         <div class="app-titlebar-title">
                             <span>Custom Discord RPC</span>
+                        </div>
+
+                        <div class="app-titlebar-hint" onclick="window.open('https://github.com/babahgee/Custom-Discord-Rich-Presence/blob/master/Custom%20Discord%20Rich%20Presence/documentation/how%20to%20create%20an%20application.md', '_blank')">
+                            <span>?</span>
                         </div>
 
                     </div>
@@ -67,10 +80,29 @@
 
             <div class="app-contents">
 
+                <div class="login-container">
+                    <div class="container">
+
+                        <div class="login-icon-wrapper">
+                            <div class="login-icon">
+                                <img src="data/images/discord.png" />
+                            </div>
+                        </div>
+
+                        <div class="login-inputfield" data-type="string" data-id="inputfield-clientid" data-title="Client ID | 18 characters" contenteditable="true" spellcheck="false"></div>
+
+                        <div class="login-button">
+                            <img src="data/icons/icon_arrowright.png" />
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
 
         </div>
     </div>
+
+    <script src="js/login.js" type="module"></script>
 </body>
 </html>

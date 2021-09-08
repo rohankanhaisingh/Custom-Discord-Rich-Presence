@@ -34,6 +34,9 @@ function createUserDataFileTemplate() {
     return config;
 }
 
+/**
+ * Gets data from configuration file.
+ */
 function getConfigFile() {
 
     const appfolder = fs.readdirSync(path.join(process.env.APPDATA, applicationName), {encoding: "utf-8"});
@@ -46,6 +49,27 @@ function getConfigFile() {
     }
 
     createAppDataFolderTemplate();
+}
+
+/**
+ * Sets client id in config file.
+ * @param {string} clientID
+ */
+function setClientID(clientID) {
+
+    const appfolder = fs.readdirSync(path.join(process.env.APPDATA, applicationName), { encoding: "utf-8" });
+
+    if (appfolder.includes("Application Data")) {
+
+        const configFile = fs.readFileSync(path.join(process.env.APPDATA, applicationName, "Application Data", "configuration.json"), { encoding: "utf-8" });
+
+        const format = JSON.parse(configFile);
+
+        format["clientID"] = clientID;
+
+        fs.writeFileSync(path.join(process.env.APPDATA, applicationName, "Application Data", "configuration.json"), JSON.stringify(format, null, 2), { encoding: "utf-8" });
+    }
+
 }
 
 function init() {
@@ -65,5 +89,7 @@ function init() {
 }
 
 module.exports = {
-    init: init
+    init: init,
+    setClientID: setClientID,
+    getConfigFile: getConfigFile
 }

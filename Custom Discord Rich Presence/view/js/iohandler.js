@@ -18,3 +18,9 @@ export function emitData(channel, data) {
 
     }
 }
+
+export function listen(channel, callback) {
+
+    socket.on(channel, callback);
+
+}

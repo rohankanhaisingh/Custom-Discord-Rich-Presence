@@ -1,0 +1,172 @@
+a, abbr, acronym, address, applet, b, big, blockquote, body, button, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, footer, form, h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend, li, nav, object, ol, p, pre, q, s, samp, section, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, title, tr, tt, u, ul, var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: 0 0;
+}
+
+svg {
+    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #3e3e3e;
+    height: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #ff3e3e;
+    }
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #101010;
+    user-select: none;
+    -moz-animation: app-fadein 0.3s ease;
+    -o-animation: app-fadein 0.3s ease;
+    -webkit-animation: app-fadein 0.3s ease;
+    animation: app-fadein 0.3s ease;
+}
+
+@keyframes app-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    content: "";
+}
+
+    .container:before, .container:after {
+        position: absolute;
+    }
+
+.app-icon {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+    .app-icon img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        pointer-events: none;
+        user-select: none;
+        border-radius: 10px;
+    }
+
+.app-spinner {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 80px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -moz-animation: spinner-spin 1s ease infinite;
+    -o-animation: spinner-spin 1s ease infinite;
+    -webkit-animation: spinner-spin 1s ease infinite;
+    animation: spinner-spin 1s ease infinite;
+}
+
+@keyframes spinner-spin {
+    0% {
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        border-top: 2px solid #ff3e3e;
+        border-bottom: 2px solid #ff3e3e;
+    }
+
+    100% {
+        opacity: 1;
+        -moz-transform: rotate(calc(360deg * 3));
+        -ms-transform: rotate(calc(360deg * 3));
+        -o-transform: rotate(calc(360deg * 3));
+        -webkit-transform: rotate(calc(360deg * 3));
+        transform: rotate(calc(360deg * 3));
+    }
+}
+
+.app-loadertext {
+    width: 100%;
+    height: 10px;
+    text-align: center;
+    bottom: 150px;
+    position: absolute;
+    left: 0;
+}
+
+    .app-loadertext span {
+        font-family: Montserrat;
+        color: #fff;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+.app-footer {
+    width: 100%;
+    height: 10px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+}
+
+    .app-footer span {
+        font-family: RobotoLight;
+        color: #fff;
+        font-size: 10px;
+    }
+
+        .app-footer span i {
+            color: #ff3e3e;
+        }
