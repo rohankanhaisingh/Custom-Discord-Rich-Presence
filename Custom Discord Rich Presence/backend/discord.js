@@ -53,7 +53,7 @@ function getDiscordClient() {
  * Sets presence on startup
  * @param {object} data
  */
-function setPresenceOnStartup(data) {
+function updatePresence(data) {
 
     if (typeof discordClient == "undefined") {
 
@@ -76,8 +76,8 @@ function setPresenceOnStartup(data) {
         discordClient.setActivity({
             details: typeof d.details == "string" ? d.details : "Details",
             state: typeof d.state == "string" ? d.state : "State",
-            startTimestamp: d.startTimestamp !== null ? d.startTimestamp : undefined,
-            endTimestamp: d.endTimestamp !== null ? d.endTimestamp : undefined,
+            startTimestamp: d.startTimestamp !== false ? d.startTimestamp : undefined,
+            endTimestamp: d.endTimestamp !== false ? d.endTimestamp : undefined,
             largeImageKey: typeof d.largeImageKey == "string" ? d.largeImageKey : undefined,
             smallImageKey: typeof d.smallImageKey == "string" ? d.smallImageKey : undefined,
             largeImageText: typeof d.largeImageText == "string" ? d.largeImageText : undefined,
@@ -100,6 +100,7 @@ function setPresenceOnStartup(data) {
 
 module.exports = {
     login: login,
-    setPresenceOnStartup: setPresenceOnStartup,
+    setPresenceOnStartup: updatePresence,
+    updatePresence: updatePresence,
     getDiscordClient: getDiscordClient
 }

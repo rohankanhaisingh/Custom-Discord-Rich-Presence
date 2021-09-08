@@ -82,6 +82,11 @@
         width: calc(90% - 44px);
     }
 
+    .login-inputfield.error {
+        border: 2px solid #fe4a4a;
+        background: #a33333;
+    }
+
 .login-button {
     width: 15px;
     height: 15px;

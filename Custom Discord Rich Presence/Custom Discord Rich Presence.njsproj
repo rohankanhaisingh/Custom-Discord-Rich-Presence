@@ -29,6 +29,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <Content Include="assets\icons\win\discord.ico" />
+    <Content Include="assets\icons\win\discord.png" />
     <Content Include="backend\appdata.js" />
     <Content Include="backend\discord.js" />
     <Content Include="backend\handleIO.js" />
@@ -134,8 +136,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\icons\" />
+    <Folder Include="assets\icons\win\" />
     <Folder Include="backend\" />
     <Folder Include="documentation\" />
+    <Folder Include="assets\" />
     <Folder Include="view\" />
     <Folder Include="view\css\static\" />
     <Folder Include="view\data\fonts\" />

@@ -1,17 +1,64 @@
 import "./essentials.js";
-import { handle } from "./handleInputfields.js";
 import { emitData, listen } from "./iohandler.js";
 
 const inputFields = document.querySelectorAll(".visualizer-inputfield"),
     buttons = document.querySelectorAll(".visualizer-button"),
     loader = document.querySelector(".app-loader");
 
-window.addEventListener("load", function () {
+function handleInputFields(inputfields) {
 
-    // Requesting data from the server.
-    emitData("discord:getClientData");
-    emitData("app:getPresenceData");
+    const tempObject = {};
 
+    inputfields.forEach(function (field) {
+
+        let inputType = field.getAttribute("data-type"),
+            inputValue = field.innerText,
+            parsedValue = inputValue,
+            fieldId = field.getAttribute("data-bind");
+
+        switch (inputType) {
+
+            case "number":
+
+                if (parsedValue !== "") {
+
+                    if (parsedValue == "now") {
+
+                        parsedValue = Date.now();
+
+                    } else {
+                        parsedValue = parseFloat(inputValue);
+                    }
+
+                    if (isNaN(parsedValue)) {
+
+                        field.innerHTML = Date.now();
+
+                        parsedValue = Date.now();
+                    }
+                } else {
+                    parsedValue = false;
+                }
+
+                break;
+            case "string":
+
+                if (parsedValue == '' || typeof parsedValue == "undefined") {
+                    parsedValue = false;
+                }
+
+                break;
+        }
+
+        tempObject[fieldId] = parsedValue;
+
+    });
+
+    return tempObject;
+
+}
+
+function startListeners() {
     listen("discord.response:getClientData", function (data) {
 
         const profileNameNode = document.querySelector(".discord-visualizer-profile-name"),
@@ -35,8 +82,6 @@ window.addEventListener("load", function () {
 
     listen("app.response:getPresenceData", function (data) {
 
-        console.log(data);
-
         const presenceData = data.presence;
 
         for (let key in presenceData) {
@@ -46,7 +91,9 @@ window.addEventListener("load", function () {
                 const fieldAttr = field.getAttribute("data-bind");
 
                 if (fieldAttr == key) {
-                    field.innerHTML = presenceData[key];
+                    if (typeof presenceData[key] !== "boolean") {
+                        field.innerHTML = presenceData[key];
+                    }
                 }
 
             });
@@ -54,7 +101,36 @@ window.addEventListener("load", function () {
         }
 
     });
+}
 
+function keyboardHandlers() {
+
+    inputFields.forEach(function (field) {
+        
+        field.addEventListener("keydown", function (event) {
+
+            switch (event.keyCode) {
+                case 13:
+
+                    event.preventDefault();
+
+                    break;
+            }
+
+        });
+
+    });
+
+}
+
+window.addEventListener("load", function () {
+
+    // Requesting data from the server.
+    emitData("discord:getClientData");
+    emitData("app:getPresenceData");
+
+    startListeners();
+    keyboardHandlers();
 
 
     buttons.forEach(function (button) {
@@ -66,7 +142,8 @@ window.addEventListener("load", function () {
             switch (buttonID) {
                 case "discord-rpc-update":
 
-                    const obj = handle(inputFields);
+                    const obj = handleInputFields(inputFields);
+
 
                     emitData("app:update_presence", obj);
 

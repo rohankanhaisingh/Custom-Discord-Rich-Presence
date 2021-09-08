@@ -1,6 +1,7 @@
 const fs = require("fs"),
     path = require("path"),
     url = require("url");
+const { getDiscordClient } = require("./discord");
 
 const applicationName = "custom-discord-rpc";
 
@@ -32,6 +33,28 @@ function createUserDataFileTemplate() {
     fs.writeFileSync(path.join(process.env.APPDATA, applicationName, "Application Data", "configuration.json"), JSON.stringify(config, null, 2), { encoding: "utf-8" });
 
     return config;
+}
+
+/**
+ * Saves presence data into config file.
+ * @param {object} data
+ */
+function saveData(data) {
+
+    const currentData = getConfigFile();
+
+    for (let key in data) {
+
+        currentData.presence[key] = data[key];
+
+        //if (currentData.presence[key] !== data[key]) {
+        //    currentData.presence[key] = data[key];
+        //}
+
+    }
+
+    fs.writeFileSync(path.join(process.env.APPDATA, applicationName, "Application Data", "configuration.json"), JSON.stringify(currentData, null, 2), { encoding: "utf-8" });
+
 }
 
 /**
@@ -91,5 +114,6 @@ function init() {
 module.exports = {
     init: init,
     setClientID: setClientID,
-    getConfigFile: getConfigFile
+    getConfigFile: getConfigFile,
+    saveData: saveData
 }

@@ -3,10 +3,10 @@ const path = require("path"),
     fs = require("fs");
     colors = require("colors");
 
-const { login, getDiscordClient } = require("./discord");
+const { login, getDiscordClient, updatePresence } = require("./discord");
 
 const appdata = require("./appdata");
-const { getConfigFile } = require("./appdata");
+const { getConfigFile, saveData } = require("./appdata");
 
 let activeSocket;
 
@@ -41,7 +41,13 @@ function handle(socket, window) {
 
     socket.on("app:update_presence", function (data) {
 
-        console.log(data);
+        saveData(data);
+
+        updatePresence({
+            timestamp: Date.now(),
+            type: "object",
+            presence: data
+        });
 
     });
 

@@ -31,7 +31,7 @@ app.on("ready", function () {
         maxHeight: 460,
         frame: false,
         show: false,
-        icon: "./assets/icons/win/icon_small.png",
+        icon: "./assets/icons/win/discord.png",
         autoHideMenuBar: true,
         titleBarStyle: "hidden"
     });
@@ -39,6 +39,13 @@ app.on("ready", function () {
     loader.setMenu(null);
 
     loader.webContents.once("dom-ready", function () {
+
+        if (typeof parsedAppData == "undefined") {
+            app.relaunch();
+            app.exit(0);
+
+            return;
+        }
 
         setTimeout(function () {
             // Create new browser window.
@@ -52,6 +59,7 @@ app.on("ready", function () {
                 frame: false,
                 show: false,
                 titleBarStyle: "hidden",
+                icon: "./assets/icons/win/discord.png",
                 webPreferences: {
                     contextIsolation: false,
                     nodeIntegration: true,
