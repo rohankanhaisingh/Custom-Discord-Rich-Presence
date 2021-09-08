@@ -9,7 +9,8 @@
   },
   "scripts": {
     "install": "npm install electron colors socket.io socket.io-client express discord-rpc cheerio node-notifier",
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager . Discord-Custom-RPC --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/discord.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Discord Custom RPC\""
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
