@@ -43,21 +43,47 @@
     <div class="app app-loader">
         <div class="container">
 
-            <div class="app-icon">
-                <img src="./data/images/discord.png" />
-            </div>
+            <div class="app-content">
+                <div class="app-center">
+                    <div class="container">
+                        <div class="app-icon">
+                            <img src="./data/images/discord.png" />
+                        </div>
 
-            <div class="app-loadertext">
-                <span>loading</span>
-            </div>
+                        <div class="app-loadertext">
+                            <span>loading</span>
+                        </div>
 
-            <div class="app-spinner"></div>
+                        <div class="app-spinner"></div>
+                    </div>
+                </div>
 
-            <div class="app-footer">
-                <span>Made with <i class="fa fa-heart"></i> by Babah Gee</span>
+                <div class="app-footer">
+                    <span>Made with <i class="fa fa-heart"></i> by Babah Gee</span>
+                </div>
             </div>
 
         </div>
     </div>
+
+    <script type="module">
+
+        const electron = require("electron");
+
+        const { ipcRenderer } = electron;
+
+        const mainApp = document.querySelector(".app-loader"),
+            appContent = document.querySelector(".app-content");
+
+        window.addEventListener("load", function () {
+            ipcRenderer.send("loader:getstatus", null);
+
+            ipcRenderer.on("loader:animate", function (event, args) {
+                mainApp.classList.add("expand");
+                appContent.classList.add("hidden");
+            });
+        });
+
+    </script>
 </body>
 </html>

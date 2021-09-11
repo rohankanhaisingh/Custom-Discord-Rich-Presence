@@ -1,12 +1,16 @@
 const path = require("path"),
     url = require("url"),
-    fs = require("fs");
+    fs = require("fs"),
+    electron = require("electron");
     colors = require("colors");
 
 const { login, getDiscordClient, updatePresence } = require("./discord");
 
 const appdata = require("./appdata");
 const { getConfigFile, saveData } = require("./appdata");
+
+const { Client } = require("socket.io-client");
+const { BrowserWindow } = require("electron");
 
 let activeSocket;
 
@@ -37,7 +41,12 @@ function emitData(channel, data) {
 
 }
 
-function handle(socket, window) {
+/**
+ * Handles input and output from client.
+ * @param {Client} socket
+ * @param {BrowserWindow} window
+ */
+function handle(socket, window, app) {
 
     socket.on("app:update_presence", function (data) {
 

@@ -1,8 +1,11 @@
 import "./essentials.js";
+import "./navbar.js";
+
 import { emitData, listen } from "./iohandler.js";
+import { Toast } from "./toast.js";
 
 const inputFields = document.querySelectorAll(".visualizer-inputfield"),
-    buttons = document.querySelectorAll(".visualizer-button"),
+    emitButtons = document.querySelectorAll(".emit-event-button"),
     loader = document.querySelector(".app-loader");
 
 function handleInputFields(inputfields) {
@@ -59,15 +62,20 @@ function handleInputFields(inputfields) {
 }
 
 function startListeners() {
+
     listen("discord.response:getClientData", function (data) {
 
         const profileNameNode = document.querySelector(".discord-visualizer-profile-name"),
-            profilePictureNode = document.querySelector(".discord-visualizer-profile-picture img");
+            profilePictureNode = document.querySelector(".discord-visualizer-profile-picture img"),
+            navbarProfilePictureNode = document.querySelector(".navbar-user-profile-picture img"),
+            navbarProfileNameNode = document.querySelector(".navbar-user-profile-name span");
 
 
-        profilePictureNode.src = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.gif`;
+        profilePictureNode.src = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`;
+        navbarProfilePictureNode.src = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`;
 
         profileNameNode.innerHTML = `<span>${data.username}#<b>${data.discriminator}</b></span>`;
+        navbarProfileNameNode.innerText = `${data.username}`;
 
         loader.classList.add("fadeout");
 
@@ -103,6 +111,12 @@ function startListeners() {
     });
 }
 
+function updatePresence() {
+    emitData("app:update_presence", handleInputFields(inputFields));
+
+    new Toast("Discord Presence", "Presence has been succesfully updated.", "icon:discord", 3000);
+}
+
 function keyboardHandlers() {
 
     inputFields.forEach(function (field) {
@@ -123,6 +137,58 @@ function keyboardHandlers() {
 
 }
 
+function inputDateHandlers() {
+
+    inputFields.forEach(function (field) {
+
+        const interactionAttr = field.getAttribute("data-interactive");
+
+        if (interactionAttr === null) return;
+
+        switch (interactionAttr) {
+            case "date":
+
+                field.addEventListener("click", function () {
+
+                    if (!field.classList.contains("active")) {
+
+                        field.classList.add("active");
+
+                        let tempEm = document.createElement("input");
+                        tempEm.type = "datetime-local";
+
+                        tempEm.addEventListener("change", function () {
+
+                            const selectedDate = new Date(tempEm.value);
+
+                            const format = selectedDate.getTime();
+
+                            tempEm.remove();
+
+                            field.classList.remove("active");
+
+                            field.innerHTML = format;
+
+                            tempEm = null;
+
+                        });
+
+                        field.appendChild(tempEm);
+
+                        tempEm.focus();
+                        tempEm.click();
+                    } 
+
+
+                });
+
+                break;
+        }
+
+    });
+
+}
+
 window.addEventListener("load", function () {
 
     // Requesting data from the server.
@@ -131,25 +197,27 @@ window.addEventListener("load", function () {
 
     startListeners();
     keyboardHandlers();
+    inputDateHandlers();
 
+    emitButtons.forEach(function (button) {
 
-    buttons.forEach(function (button) {
-
-        const buttonID = button.getAttribute("data-id");
+        const emitChannel = button.getAttribute("socket-emit");
 
         button.addEventListener("click", function () {
+            if (emitChannel !== null) {
 
-            switch (buttonID) {
-                case "discord-rpc-update":
+                switch (emitChannel) {
+                    case "app:update_presence":
 
-                    const obj = handleInputFields(inputFields);
+                        updatePresence();
 
+                        break;
+                    default:
+                        emitData(emitChannel, 0);
+                        break;
+                }
 
-                    emitData("app:update_presence", obj);
-
-                    break;
             }
-
         });
 
     });

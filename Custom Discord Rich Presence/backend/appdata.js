@@ -115,5 +115,6 @@ module.exports = {
     init: init,
     setClientID: setClientID,
     getConfigFile: getConfigFile,
-    saveData: saveData
+    saveData: saveData,
+    createUserDataFileTemplate: createUserDataFileTemplate
 }

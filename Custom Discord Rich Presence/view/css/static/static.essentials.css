@@ -18,9 +18,8 @@ a, abbr, acronym, address, applet, b, big, blockquote, body, button, caption, ce
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #3e3e3e;
+    background: #b7b7b7;
     height: 10px;
-    border-radius: 20px;
 }
 
     /* Handle on hover */
@@ -35,7 +34,7 @@ a, abbr, acronym, address, applet, b, big, blockquote, body, button, caption, ce
     top: 0;
     left: 0;
     z-index: 1;
-    background: url(../../data/images/wallpaper_abstract.jpg);
+    background: url(../../data/images/wallpaper_abstract_white.jpg);
     background-size: auto auto;
 }
 
@@ -51,7 +50,7 @@ a, abbr, acronym, address, applet, b, big, blockquote, body, button, caption, ce
 
 .app-contents {
     width: 100%;
-    height: calc(100% - 30px);
+    height: calc(100% - 60px);
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;

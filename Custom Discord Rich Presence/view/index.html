@@ -32,7 +32,9 @@
 
     <link href="css/static/static.essentials.css" rel="stylesheet" type="text/css" />
     <link href="css/static/static.titlebar.css" rel="stylesheet" type="text/css" />
+    <link href="css/static/static.navbar.css" rel="stylesheet" type="text/css" />
     <link href="css/static/static.loader.css" rel="stylesheet" type="text/css" />
+    <link href="css/static/static.toasts.css" rel="stylesheet" type="text/css" />
 
     <link href="css/main.css" type="text/css" rel="stylesheet" />
 
@@ -50,6 +52,30 @@
                 </div>
             </div>
 
+            <div class="app-toasts-container">
+
+                <!--<div class="app-toast">
+                    <div class="container">
+
+                        <div class="toast-icon">
+                            <img src="data/images/discord.png"/>
+                        </div>
+
+                        <div class="toast-content">
+                            <div class="toast-title">
+                                <span>Update</span>
+                            </div>
+                            <div class="toast-hl"></div>
+                            <div class="toast-details">
+                                <span>Presence has been succesfully updated.</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>-->
+
+            </div>
+
             <div class="app-titlebar">
                 <div class="container">
 
@@ -65,6 +91,57 @@
                         <div class="app-titlebar-controls-control control-close"></div>
                         <div class="app-titlebar-controls-control control-maximize"></div>
                         <div class="app-titlebar-controls-control control-minimize"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="app-navbar">
+                <div class="container">
+
+                    <div class="navbar-buttonlist">
+
+                        <div class="navbar-buttonlist-button emit-event-button" socket-emit="app:update_presence">
+                            <span>Update presence</span>
+                        </div>
+                        <div class="navbar-buttonlist-button emit-event-button">
+                            <span>Settings</span>
+                        </div>
+
+                        <a href="https://github.com/babahgee/Custom-Discord-Rich-Presence/tree/master/Custom%20Discord%20Rich%20Presence/documentation" target="_blank">
+                            <div class="navbar-buttonlist-button emit-event-button">
+                                <span>Help</span>
+                            </div>
+                        </a>
+
+                        <div class="navbar-buttonlist-button emit-event-button">
+                            <span>App listener</span>
+                        </div>
+
+                        <div class="navbar-buttonlist-button emit-event-button">
+                            <span>Check for updates</span>
+                        </div>
+
+                    </div>
+
+                    <div class="navbar-user-profile">
+                        
+                        <div class="navbar-user-profile-button">
+                            <div class="navbar-user-profile-picture">
+                                <img src="" alt="What da dawg doing" />
+                            </div>
+                            <div class="navbar-user-profile-name">
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="navbar-user-profile-dropdown">
+                            <div class="navbar-user-profile-dropdown-button" emit="app:logout"><span>Logout</span></div>
+                            <div class="navbar-user-profile-dropdown-button" emit="app:reload"><span>Reload</span></div>
+                            <div class="navbar-user-profile-dropdown-button" emit="app:close"><span>Exit</span></div>
+                            <div class="navbar-user-profile-dropdown-button" emit="app:devtools"><span>Dev Tools</span></div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -142,14 +219,11 @@
                         <div class="visualizer-inputfield" data-type="string" data-bind="smallImageKey" data-id="inputfield-small_image_key" data-title="Small-image key" contenteditable="true" spellcheck="false"></div>
                         <div class="visualizer-inputfield" data-type="string" data-bind="largeImageText" data-id="inputfield-large_image_text" data-title="Large-image text" contenteditable="true" spellcheck="false"></div>
                         <div class="visualizer-inputfield" data-type="string" data-bind="smallImageText" data-id="inputfield-small_image_text" data-title="Small-image text" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="number" data-bind="startTimestamp" data-id="inputfield-start_timestamp" data-title="Start timestamp" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="number" data-bind="endTimestamp" data-id="inputfield-end_timestamp" data-title="End timestamp" contenteditable="true" spellcheck="false"></div>
+                        <div class="visualizer-inputfield" data-type="number" data-interactive="date" data-bind="startTimestamp" data-id="inputfield-start_timestamp" data-title="Start timestamp" contenteditable="true" spellcheck="false"></div>
+                        <div class="visualizer-inputfield" data-type="number" data-interactive="date" data-bind="endTimestamp" data-id="inputfield-end_timestamp" data-title="End timestamp" contenteditable="true" spellcheck="false"></div>
 
-                        <div class="visualizer-button" data-id="discord-rpc-update">
-                            <span>Update</span>
-                        </div>
-                        <div class="visualizer-button">
-                            <span>logout</span>
+                        <div class="visualizer-button emit-event-button" socket-emit="app:update_presence">
+                            <span>Update Presence</span>
                         </div>
 
                     </div>

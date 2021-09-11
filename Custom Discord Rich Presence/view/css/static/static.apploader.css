@@ -1,3 +1,4 @@
+
 a, abbr, acronym, address, applet, b, big, blockquote, body, button, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, footer, form, h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend, li, nav, object, ol, p, pre, q, s, samp, section, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, title, tr, tt, u, ul, var {
     margin: 0;
     padding: 0;
@@ -36,18 +37,39 @@ svg {
     }
 
 .app {
-    width: 100vw;
-    height: 100vh;
+    width: 270px;
+    height: 410px;
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    margin: auto;
     z-index: 1;
-    background: #101010;
+    background: url(../../data/images/wallpaper_abstract_white.jpg);
+    background-size: auto auto;
     user-select: none;
-    -moz-animation: app-fadein 0.3s ease;
-    -o-animation: app-fadein 0.3s ease;
-    -webkit-animation: app-fadein 0.3s ease;
-    animation: app-fadein 0.3s ease;
+    -moz-animation: app-fadein 1s ease;
+    -o-animation: app-fadein 1s ease;
+    -webkit-animation: app-fadein 1s ease;
+    animation: app-fadein 1s ease;
+}
+
+    .app.expand {
+        width: 100vw;
+        height: 100vh;
+        -moz-animation: app-expand 0.5s ease;
+        -o-animation: app-expand 0.5s ease;
+        -webkit-animation: app-expand 0.5s ease;
+        animation: app-expand 0.5s ease;
+    }
+
+@keyframes app-expand {
+    0% {
+        width: 270px;
+        height: 410px;
+    }
+    100% {
+        width: 100vw;
+        height: 100vh;
+    }
 }
 
 @keyframes app-fadein {
@@ -75,9 +97,21 @@ svg {
         position: absolute;
     }
 
+.app-center {
+    width: 270px;
+    height: 410px;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+}
+
+.app-content.hidden {
+    display: none;
+}
+
 .app-icon {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
     position: absolute;
     top: 50px;
     left: 0;
@@ -104,8 +138,8 @@ svg {
     bottom: 80px;
     border-radius: 50%;
     border: 2px solid transparent;
-    border-top: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
     -moz-animation: spinner-spin 1s ease infinite;
     -o-animation: spinner-spin 1s ease infinite;
     -webkit-animation: spinner-spin 1s ease infinite;
@@ -147,7 +181,7 @@ svg {
 
     .app-loadertext span {
         font-family: Montserrat;
-        color: #fff;
+        color: #000;
         font-size: 12px;
         text-transform: uppercase;
     }
@@ -163,7 +197,7 @@ svg {
 
     .app-footer span {
         font-family: RobotoLight;
-        color: #fff;
+        color: #000;
         font-size: 10px;
     }
 

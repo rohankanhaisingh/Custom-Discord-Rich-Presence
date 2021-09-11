@@ -4,6 +4,8 @@ const rpc = require("discord-rpc"),
     url = require("url"),
     notifier = require('node-notifier');
 
+const { dialog } = require("electron");
+
 /**@type { rpc.Client } */
 let discordClient;
 
@@ -33,7 +35,17 @@ function login(data, callback) {
         callback(discordClient);
     });
 
-    discordClient.login({ clientId: clientID });
+    discordClient.login({ clientId: clientID }).catch(function (err) {
+
+        discordClient.destroy();
+
+        dialog.showMessageBox({
+            type: "error",
+            title: "Client Connection Error",
+            message: err.message,
+            detail: "User may lost connection or has entered a wrong client ID."
+        });
+    });
 
 }
 

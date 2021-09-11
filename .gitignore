@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Custom Discord Rich Presence/release-builds/Discord-Custom-RPC-win32-ia32
+/Custom Discord Rich Presence/release-builds

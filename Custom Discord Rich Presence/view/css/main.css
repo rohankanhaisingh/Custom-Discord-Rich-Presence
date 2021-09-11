@@ -189,7 +189,7 @@
     background: none;
     border-radius: 30px;
     border: 2px solid #3e3e3e;
-    color: #fff;
+    color: #000;
     font-family: RobotoLight;
     font-size: 12px;
     line-height: 20px;
@@ -208,7 +208,7 @@
         top: 10px;
         left: 30px;
         font-family: 'RobotoLight';
-        color: #adadad;
+        color: #000;
         font-size: 12px;
         background: none;
         padding: 0 7px;
@@ -224,12 +224,21 @@
     .visualizer-inputfield:focus:before, .visualizer-inputfield:not(:empty):before {
         top: -10px;
         font-size: 10px;
-        background: #131221;
+        background: #b2adff;
     }
 
     .visualizer-inputfield:focus, .visualizer-inputfield:not(:empty) {
         border: 2px solid #5865f2;
-        background: #313052;
+        background: #e5e5ff;
+    }
+
+    .visualizer-inputfield input {
+        background: none;
+        outline: none;
+        border: 1px solid #7f88f0;
+        border-radius: 5px;
+        margin-left: 20px;
+        font-family: 'RobotoLight';
     }
 
 .visualizer-button {
@@ -237,26 +246,25 @@
     height: auto;
     display: table;
     margin: 20px auto;
-    padding: 10px 35px;
+    padding: 10px 25px;
     border-radius: 30px;
-    border: 2px solid #2f3136;
+    border: 1px solid #dadada;
     background: none;
     cursor: pointer;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
 
 .visualizer-button span {
-    font-family: Montserrat;
-    color: #fff;
+    font-family: RobotoLight;
+    color: #000;
     font-size: 12px;
-    text-transform: uppercase;
     user-select: none;
 }
 
     .visualizer-button:hover {
-        background: #5865f2;
-        border: 2px solid #5865f2;
+        background: #7f88f0;
+        border: 1px solid #7f88f0;
+    }
+
+    .visualizer-button:hover span {
+        color: #fff;
     }

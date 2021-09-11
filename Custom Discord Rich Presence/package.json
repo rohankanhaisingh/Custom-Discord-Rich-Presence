@@ -1,6 +1,6 @@
 {
   "name": "custom-discord-rich-presence",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Custom Discord Rich Presence",
   "main": "app.js",
   "author": {

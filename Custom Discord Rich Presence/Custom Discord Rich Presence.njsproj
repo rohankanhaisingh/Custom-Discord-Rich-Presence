@@ -35,6 +35,7 @@
     <Content Include="backend\discord.js" />
     <Content Include="backend\handleIO.js" />
     <Content Include="documentation\how to create an application.md" />
+    <Content Include="documentation\inputfields\details.md" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="view\css\login.css" />
@@ -42,7 +43,9 @@
     <Content Include="view\css\static\static.apploader.css" />
     <Content Include="view\css\static\static.essentials.css" />
     <Content Include="view\css\static\static.loader.css" />
+    <Content Include="view\css\static\static.navbar.css" />
     <Content Include="view\css\static\static.titlebar.css" />
+    <Content Include="view\css\static\static.toasts.css" />
     <Content Include="view\data\fonts\atures.ttf" />
     <Content Include="view\data\fonts\black.ttf" />
     <Content Include="view\data\fonts\Chopsic-K6Dp.ttf" />
@@ -122,6 +125,7 @@
     <Content Include="view\data\images\discord.png" />
     <Content Include="view\data\images\user.png" />
     <Content Include="view\data\images\wallpaper_abstract.jpg" />
+    <Content Include="view\data\images\wallpaper_abstract_white.jpg" />
     <Content Include="view\index.html">
       <SubType>Code</SubType>
     </Content>
@@ -130,6 +134,8 @@
     <Content Include="view\js\iohandler.js" />
     <Content Include="view\js\login.js" />
     <Content Include="view\js\main.js" />
+    <Content Include="view\js\navbar.js" />
+    <Content Include="view\js\toast.js" />
     <Content Include="view\loader.html" />
     <Content Include="view\login.html">
       <SubType>Code</SubType>
@@ -141,6 +147,7 @@
     <Folder Include="backend\" />
     <Folder Include="documentation\" />
     <Folder Include="assets\" />
+    <Folder Include="documentation\inputfields\" />
     <Folder Include="view\" />
     <Folder Include="view\css\static\" />
     <Folder Include="view\data\fonts\" />
