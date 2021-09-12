@@ -7,6 +7,14 @@ const path = require("path"),
     colors = require("colors"),
     socketio = require("socket.io");
 
+// Auto updater
+require('update-electron-app')({
+    repo: 'babahgee/Custom-Discord-Rich-Presence',
+    updateInterval: '1 hour',
+    logger: require('electron-log'),
+    notifyUser: true
+})
+
 // Get required objects from 'electron' object.
 const { app, BrowserWindow, ipcMain, dialog } = electron;
 

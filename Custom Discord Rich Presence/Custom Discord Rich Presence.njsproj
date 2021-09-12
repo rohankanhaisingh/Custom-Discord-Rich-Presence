@@ -35,7 +35,8 @@
     <Content Include="backend\discord.js" />
     <Content Include="backend\handleIO.js" />
     <Content Include="documentation\how to create an application.md" />
-    <Content Include="documentation\inputfields\details.md" />
+    <Content Include="documentation\how to use the inputfields.md" />
+    <Content Include="documentation\resetting the app when it breaks.md" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="view\css\login.css" />
@@ -147,7 +148,6 @@
     <Folder Include="backend\" />
     <Folder Include="documentation\" />
     <Folder Include="assets\" />
-    <Folder Include="documentation\inputfields\" />
     <Folder Include="view\" />
     <Folder Include="view\css\static\" />
     <Folder Include="view\data\fonts\" />
