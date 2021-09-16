@@ -18,6 +18,9 @@ function createUserDataFileTemplate() {
 
     const config = {
         "clientID": null,
+        "appearance": {
+            "theme": "bright"
+        },
         "presence": {
             "details": "Details here!",
             "state": "State here!",
@@ -82,17 +85,17 @@ function setClientID(clientID) {
 
     const appfolder = fs.readdirSync(path.join(process.env.APPDATA, applicationName), { encoding: "utf-8" });
 
-    if (appfolder.includes("Application Data")) {
+    if (!appfolder.includes("Application Data")) return;
 
-        const configFile = fs.readFileSync(path.join(process.env.APPDATA, applicationName, "Application Data", "configuration.json"), { encoding: "utf-8" });
+    const configFile = fs.readFileSync(path.join(process.env.APPDATA, applicationName, "Application Data", "configuration.json"), { encoding: "utf-8" });
 
-        const format = JSON.parse(configFile);
+    const format = JSON.parse(configFile);
 
-        format["clientID"] = clientID;
+    format["clientID"] = clientID;
 
-        fs.writeFileSync(path.join(process.env.APPDATA, applicationName, "Application Data", "configuration.json"), JSON.stringify(format, null, 2), { encoding: "utf-8" });
-    }
+    fs.writeFileSync(path.join(process.env.APPDATA, applicationName, "Application Data", "configuration.json"), JSON.stringify(format, null, 2), { encoding: "utf-8" });
 
+    return clientID;
 }
 
 function init() {

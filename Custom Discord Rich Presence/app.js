@@ -5,7 +5,9 @@ const path = require("path"),
     electron = require("electron"),
     express = require("express"),
     colors = require("colors"),
+    isDev = require("electron-is-dev"),
     socketio = require("socket.io");
+    //autoLaunch = require("auto-launch");
 
 // Auto updater
 require('update-electron-app')({
@@ -44,6 +46,17 @@ let mainWindow, loader;
 
 // Event when electron has been loaded.
 app.on("ready", function () {
+
+    //if (!isDev) {
+    //    const al = new autoLaunch({
+    //        name: "Discord Custom RPC",
+    //        path: app.getPath("exe")
+    //    });
+
+    //    al.isEnabled().then((isEnabled) => {
+    //        if (!isEnabled) al.enable();
+    //    });
+    //}
 
     loader = new BrowserWindow({
         width: 700,
@@ -92,10 +105,10 @@ app.on("ready", function () {
             mainWindow = new BrowserWindow({
                 title: "Custom Discord RPC",
                 backgroundColor: "#0e0e0e",
-                width: 700,
-                height: 650,
-                minHeight: 650,
-                minWidth: 700,
+                width: 800,
+                height: 760,
+                minHeight: 760,
+                minWidth: 800,
                 resizable: true,
                 frame: false,
                 show: false,

@@ -1,6 +1,6 @@
 {
   "name": "custom-discord-rich-presence",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "description": "Custom Discord Rich Presence",
   "main": "app.js",
   "author": {
@@ -13,6 +13,7 @@
     "build": "electron-packager . Discord-Custom-RPC --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/discord.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Discord Custom RPC\""
   },
   "dependencies": {
+    "auto-launch": "^5.0.5",
     "cheerio": "^1.0.0-rc.10",
     "colors": "^1.4.0",
     "discord-rpc": "^4.0.1",

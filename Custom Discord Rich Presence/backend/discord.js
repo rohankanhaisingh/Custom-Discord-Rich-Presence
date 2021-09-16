@@ -65,7 +65,7 @@ function getDiscordClient() {
  * Sets presence on startup
  * @param {object} data
  */
-function updatePresence(data) {
+function updatePresence(data, callback) {
 
     if (typeof discordClient == "undefined") {
 
@@ -94,6 +94,20 @@ function updatePresence(data) {
             smallImageKey: typeof d.smallImageKey == "string" ? d.smallImageKey : undefined,
             largeImageText: typeof d.largeImageText == "string" ? d.largeImageText : undefined,
             smallImageText: typeof d.smallImageText == "string" ? d.smallImageText : undefined,
+            buttons: (typeof d.buttons == "object" && d.buttons.length > 0) ? d.buttons : undefined
+        }).catch(function (err) {
+
+            notifier.notify({
+                appID: "Custom Discord RPC",
+                type: "error",
+                title: 'Discord',
+                message: err.message,
+                icon: path.join(__dirname, "../", "view", "data", "images", "discord.png"),
+                sound: true
+            });
+
+            if (typeof callback == "function") callback(err);
+
         });
     } catch (err) {
 

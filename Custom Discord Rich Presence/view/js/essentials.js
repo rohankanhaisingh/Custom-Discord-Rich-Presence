@@ -76,6 +76,27 @@ export function rb(number1, number2) {
 }
 
 /**
+ * Adds a class name on a element, during a interval causing an animation.
+ * @param {HTMLElement} element
+ * @param {string} className
+ * @param {number} index
+ * @param {number} delay
+ */
+export function addClassOnInterval(element, className, index, delay) {
+
+    if (element instanceof HTMLElement) {
+
+        setTimeout(function () {
+
+            element.classList.add(className);
+
+        }, index * delay);
+
+    }
+
+}
+
+/**
  * Returns a Atan 2 value.
  * @param {number} x1
  * @param {number} y1

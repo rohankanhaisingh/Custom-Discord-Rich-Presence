@@ -118,3 +118,24 @@
 .app-titlebar-controls-control.control-close:hover {
     background: #ff6a6a;
 }
+
+.app-titlebar-hl {
+    width: 10px;
+    height: 1px;
+    float: left;
+    background: #adadad;
+    margin: 15px 20px;
+}
+
+.app-titlebar-version {
+    width: auto;
+    height: auto;
+    float: left;
+    margin: 5px 0px;
+}
+
+    .app-titlebar-version span {
+        font-family: RobotoLight;
+        font-size: 10px;
+        color: #949494;
+    }

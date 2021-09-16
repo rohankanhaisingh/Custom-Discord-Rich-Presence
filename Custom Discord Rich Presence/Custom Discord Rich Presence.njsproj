@@ -131,7 +131,6 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="view\js\essentials.js" />
-    <Content Include="view\js\handleInputfields.js" />
     <Content Include="view\js\iohandler.js" />
     <Content Include="view\js\login.js" />
     <Content Include="view\js\main.js" />

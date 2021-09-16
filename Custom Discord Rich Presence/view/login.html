@@ -32,6 +32,7 @@
 
     <link href="css/static/static.essentials.css" rel="stylesheet" type="text/css" />
     <link href="css/static/static.titlebar.css" rel="stylesheet" type="text/css" />
+    <link href="css/static/static.navbar.css" rel="stylesheet" type="text/css" />
     <link href="css/static/static.loader.css" rel="stylesheet" type="text/css" />
 
     <link href="data/fonts/index.css" rel="stylesheet" type="text/css" />
@@ -63,6 +64,12 @@
                             <span>Custom Discord RPC</span>
                         </div>
 
+                        <div class="app-titlebar-hl"></div>
+
+                        <div class="app-titlebar-version">
+                            <span></span>
+                        </div>
+
                         <div class="app-titlebar-hint" onclick="window.open('https://github.com/babahgee/Custom-Discord-Rich-Presence/blob/master/Custom%20Discord%20Rich%20Presence/documentation/how%20to%20create%20an%20application.md', '_blank')">
                             <span>?</span>
                         </div>
@@ -73,6 +80,44 @@
                         <div class="app-titlebar-controls-control control-close"></div>
                         <div class="app-titlebar-controls-control control-maximize"></div>
                         <div class="app-titlebar-controls-control control-minimize"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="app-navbar">
+                <div class="container">
+
+                    <div class="navbar-buttonlist">
+
+                        <div class="navbar-buttonlist-button emit-event-button">
+                            <span>Settings</span>
+                        </div>
+
+                        <a href="https://github.com/babahgee/Custom-Discord-Rich-Presence/tree/master/Custom%20Discord%20Rich%20Presence/documentation" target="_blank">
+                            <div class="navbar-buttonlist-button emit-event-button">
+                                <span>Help</span>
+                            </div>
+                        </a>
+
+                        <a href="https://discord.com/developers/applications" target="_blank">
+                            <div class="navbar-buttonlist-button emit-event-button">
+                                <span>Discord Developers Portal</span>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/babahgee/Custom-Discord-Rich-Presence/blob/master/Custom%20Discord%20Rich%20Presence/documentation/how%20to%20create%20an%20application.md" target="_blank">
+                            <div class="navbar-buttonlist-button emit-event-button">
+                                <span>How to get a client ID</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.youtube.com/watch?v=RrFy5LmETFE" target="_blank">
+                            <div class="navbar-buttonlist-button emit-event-button">
+                                <span>Funny meme</span>
+                            </div>
+                        </a>
+
                     </div>
 
                 </div>
@@ -114,5 +159,6 @@
     </div>
 
     <script src="js/login.js" type="module"></script>
+    <script type="module">(function () { document.querySelector(".app-titlebar-version span").innerText = "Version " + process.env.npm_package_version; })()</script>
 </body>
 </html>

@@ -85,6 +85,12 @@
                             <span>Custom Discord RPC</span>
                         </div>
 
+                        <div class="app-titlebar-hl"></div>
+
+                        <div class="app-titlebar-version">
+                            <span></span>
+                        </div>
+
                     </div>
 
                     <div class="app-titlebar-controls">
@@ -101,30 +107,30 @@
 
                     <div class="navbar-buttonlist">
 
-                        <div class="navbar-buttonlist-button emit-event-button" socket-emit="app:update_presence">
+                        <div class="navbar-buttonlist-button emit-event-button animate-when-document-loaded" socket-emit="app:update_presence">
                             <span>Update presence</span>
                         </div>
-                        <div class="navbar-buttonlist-button emit-event-button">
+                        <div class="navbar-buttonlist-button emit-event-button animate-when-document-loaded">
                             <span>Settings</span>
                         </div>
 
                         <a href="https://github.com/babahgee/Custom-Discord-Rich-Presence/tree/master/Custom%20Discord%20Rich%20Presence/documentation" target="_blank">
-                            <div class="navbar-buttonlist-button emit-event-button">
+                            <div class="navbar-buttonlist-button emit-event-button animate-when-document-loaded">
                                 <span>Help</span>
                             </div>
                         </a>
 
-                        <div class="navbar-buttonlist-button emit-event-button">
+                        <div class="navbar-buttonlist-button emit-event-button animate-when-document-loaded">
                             <span>App listener</span>
                         </div>
 
-                        <div class="navbar-buttonlist-button emit-event-button">
+                        <div class="navbar-buttonlist-button emit-event-button animate-when-document-loaded">
                             <span>Check for updates</span>
                         </div>
 
                     </div>
 
-                    <div class="navbar-user-profile">
+                    <div class="navbar-user-profile animate-when-document-loaded">
                         
                         <div class="navbar-user-profile-button">
                             <div class="navbar-user-profile-picture">
@@ -151,9 +157,9 @@
 
                 <div class="discord-visualizer-container">
 
-                    <div class="discord-visualizer">
+                    <div class="discord-visualizer animate-when-document-loaded">
 
-                        <div class="discord-visualizer-profile-container">
+                        <div class="discord-visualizer-profile-container ">
 
                             <div class="discord-visualizer-profile-picture">
                                 <img src="./data/images/beans.jpg" alt="beans" />
@@ -213,16 +219,55 @@
 
                     <div class="discord-visualizer-interact">
 
-                        <div class="visualizer-inputfield" data-type="string" data-bind="details" data-id="inputfield-details" data-title="Details" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="string" data-bind="state" data-id="inputfield-state" data-title="State" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="string" data-bind="largeImageKey" data-id="inputfield-large_image_key" data-title="Large-image key" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="string" data-bind="smallImageKey" data-id="inputfield-small_image_key" data-title="Small-image key" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="string" data-bind="largeImageText" data-id="inputfield-large_image_text" data-title="Large-image text" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="string" data-bind="smallImageText" data-id="inputfield-small_image_text" data-title="Small-image text" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="number" data-interactive="date" data-bind="startTimestamp" data-id="inputfield-start_timestamp" data-title="Start timestamp" contenteditable="true" spellcheck="false"></div>
-                        <div class="visualizer-inputfield" data-type="number" data-interactive="date" data-bind="endTimestamp" data-id="inputfield-end_timestamp" data-title="End timestamp" contenteditable="true" spellcheck="false"></div>
+                        <div class="discord-visualizer-interact-sidegrid">
+                            
+                            <!-- Left side container with all the inputfields -->
+                            <div class="discord-visualizer-inputfields">
+                                <div class="visualizer-inputfield animate-when-document-loaded" data-type="string" data-bind="details" data-id="inputfield-details" data-title="Details" contenteditable="true" spellcheck="false"></div>
+                                <div class="visualizer-inputfield animate-when-document-loaded" data-type="string" data-bind="state" data-id="inputfield-state" data-title="State" contenteditable="true" spellcheck="false"></div>
+                                <div class="visualizer-inputfield animate-when-document-loaded" data-type="string" data-bind="largeImageKey" data-id="inputfield-large_image_key" data-title="Large-image key" contenteditable="true" spellcheck="false"></div>
+                                <div class="visualizer-inputfield animate-when-document-loaded" data-type="string" data-bind="smallImageKey" data-id="inputfield-small_image_key" data-title="Small-image key" contenteditable="true" spellcheck="false"></div>
+                                <div class="visualizer-inputfield animate-when-document-loaded" data-type="string" data-bind="largeImageText" data-id="inputfield-large_image_text" data-title="Large-image text" contenteditable="true" spellcheck="false"></div>
+                                <div class="visualizer-inputfield animate-when-document-loaded" data-type="string" data-bind="smallImageText" data-id="inputfield-small_image_text" data-title="Small-image text" contenteditable="true" spellcheck="false"></div>
+                                <div class="visualizer-inputfield animate-when-document-loaded" data-type="number" data-interactive="date" data-bind="startTimestamp" data-id="inputfield-start_timestamp" data-title="Start timestamp" contenteditable="true" spellcheck="false"></div>
+                                <div class="visualizer-inputfield animate-when-document-loaded" data-type="number" data-interactive="date" data-bind="endTimestamp" data-id="inputfield-end_timestamp" data-title="End timestamp" contenteditable="true" spellcheck="false"></div>
+                            </div>
 
-                        <div class="visualizer-button emit-event-button" socket-emit="app:update_presence">
+                            <div class="discord-visualizer-buttons">
+
+                                <div class="discord-vizualizer-button-wrapper animate-when-document-loaded" data-title="Button 1">
+
+                                    <div class="discord-vizualizer-button-toggle-wrapper">
+                                        <div class="discord-vizualizer-button-toggle-title">
+                                            <span>Is active:</span>
+                                        </div>
+                                        <div class="discord-vizualizer-button-toggle animate-when-document-loaded"></div>
+                                    </div>
+
+                                    <div class="discord-vizualizer-button-inputfield animate-when-document-loaded" data-title="Label" data-bind="label" contenteditable="true" spellcheck="false"></div>
+                                    <div class="discord-vizualizer-button-inputfield animate-when-document-loaded" data-title="URL" data-bind="url" contenteditable="true" spellcheck="false"></div>
+
+                                </div>
+
+                                <div class="discord-vizualizer-button-wrapper animate-when-document-loaded" data-title="Button 2">
+
+                                    <div class="discord-vizualizer-button-toggle-wrapper">
+                                        <div class="discord-vizualizer-button-toggle-title">
+                                            <span>Is active:</span>
+                                        </div>
+                                        <div class="discord-vizualizer-button-toggle animate-when-document-loaded"></div>
+                                    </div>
+
+                                    <div class="discord-vizualizer-button-inputfield animate-when-document-loaded" data-title="Label" data-bind="label" contenteditable="true" spellcheck="false"></div>
+                                    <div class="discord-vizualizer-button-inputfield animate-when-document-loaded" data-title="URL" data-bind="url" contenteditable="true" spellcheck="false"></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="visualizer-button emit-event-button animate-when-document-loaded" socket-emit="app:update_presence">
                             <span>Update Presence</span>
                         </div>
 
@@ -237,5 +282,6 @@
 
 
     <script src="js/main.js" type="module"></script>
+    <script type="module">(function () { document.querySelector(".app-titlebar-version span").innerText = "Version " + process.env.npm_package_version; })()</script>
 </body>
 </html>
